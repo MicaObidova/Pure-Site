@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Pure Ayurveda - Responsive HTML Template</title>
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/fav.png' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="pa-login-model pa-signup-modal">
+        <div class="modal fade" id="signUpModal">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="pa-login-close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <h1 class="pa-login-title">Signup</h1>
+                    <form action="{% url 'registration' %}" method="post">
+                        {% csrf_token %}
+                        <div class="pa-login-form">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
+                            <input type="password" name="password" placeholder="Confirm Password">
+                        
+                            <div class="pa-login-btn">
+                                <button type="submit" class="pa-btn">Sign up</button>
+                                <p>Already have an account? <a href="{% url 'index' %}">Login</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/SmoothScroll.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+</body>
+</html>
